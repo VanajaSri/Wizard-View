@@ -36,14 +36,18 @@ class MainActivity : AppCompatActivity() {
 
     private fun simulateOrderProgress() {
         val handler = Handler(Looper.getMainLooper())
-        val delayBetweenSteps = 3000L // 3 seconds
+        val delayBetweenSteps = 1000L // 3 seconds
 
         var totalSteps = 0
         for (itemIndex in 0 until adapter.itemCount) {
-            val item = adapter.items[itemIndex]
+            val item = (adapter as TimelineAdapter).items[itemIndex]
             repeat(item.descriptions.size + 1) { descIndex ->
                 handler.postDelayed({
-                    adapter.updateProgress(itemIndex)
+                    if (descIndex < item.descriptions.size) {
+                        adapter.updateProgress(itemIndex)
+                    } else if (itemIndex < adapter.itemCount - 1) {
+                        adapter.updateProgress(itemIndex + 1)
+                    }
                 }, totalSteps * delayBetweenSteps)
                 totalSteps++
             }
