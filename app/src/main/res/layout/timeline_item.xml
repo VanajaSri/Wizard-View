@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <FrameLayout
+        android:id="@+id/timelinePointContainer"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/timeline_point_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/timelinePoint"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter" />
+
+    </FrameLayout>
+
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/timelineLine"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        android:background="@color/timelineLineColorGrey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/timelinePointContainer"
+        app:layout_constraintStart_toStartOf="@id/timelinePointContainer"
+        app:layout_constraintTop_toBottomOf="@id/timelinePointContainer" />
+
+    <ImageView
+        android:id="@+id/truckIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/tracking_icon"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@id/timelinePointContainer"
+        app:layout_constraintTop_toTopOf="@id/timelineLine" />
+
+    <TextView
+        android:id="@+id/timelineTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/timelinePointContainer"
+        app:layout_constraintTop_toTopOf="@id/timelinePointContainer" />
+
+    <LinearLayout
+        android:id="@+id/descriptionsContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/timelinePointContainer"
+        app:layout_constraintTop_toBottomOf="@id/timelineTitle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

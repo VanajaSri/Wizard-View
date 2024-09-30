@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="timelinePointColorGrey">#CCCCCC</color>
+    <color name="timelinePointColorGreen">#4CAF50</color>
+    <color name="timelineLineColorGrey">#CCCCCC</color>
+    <color name="timelineLineColorGreen">#4CAF50</color>
+    <color name="dividerColor">#EEEEEE</color>
+</resources>
